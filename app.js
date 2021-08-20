@@ -7,6 +7,7 @@ function setPrice(charge, price) {
     cost.innerText = price;
     totalCost()
 };
+
 // calculating all charges
 function totalCost() {
     const memoryCharge = document.getElementById('memory-charge');
@@ -24,8 +25,9 @@ function totalCost() {
 
 };
 
+// promo code validation
 function promoCode() {
-
+    // getting input field value
     const couponMsg = document.getElementById('code');
     if (couponMsg.value.toLowerCase() == 'stevekaku') {
         const totalCharge = document.getElementsByClassName('total-charge');
@@ -33,6 +35,7 @@ function promoCode() {
             totalCharge[i].innerText = parseInt(totalCharge[i].innerText) - parseInt(totalCharge[i].innerText) * 0.2;
 
         };
+        // disabling the promo code option
         document.getElementById('promo').disabled = true;
     }
     else {
@@ -42,38 +45,32 @@ function promoCode() {
     couponMsg.value = '';
 };
 
+// getting all the click events
+
 document.getElementById('8GB-memory').addEventListener('click', function () {
-    // memoryPrice('memory', 0);
     setPrice('memory', 0);
 });
 
 document.getElementById('16GB-memory').addEventListener('click', function () {
     setPrice('memory', 180);
-    // memoryPrice('memory', 180);
 });
 document.getElementById('256GB-storage').addEventListener('click', function () {
     setPrice('storage', 0);
-    // storagePrice('storage', 0);
 });
 
 document.getElementById('512GB-storage').addEventListener('click', function () {
     setPrice('storage', 100);
-    // storagePrice('storage', 100);
 });
 document.getElementById('1TB-storage').addEventListener('click', function () {
     setPrice('storage', 180);
-    // storagePrice('storage', 180);
 });
 
 document.getElementById('free-charge').addEventListener('click', function () {
     setPrice('ship', 0);
-    // deliveryCost('ship', 0);
 });
 document.getElementById('delivery-charge').addEventListener('click', function () {
     setPrice('ship', 20);
-    // deliveryCost('ship', 20);
 });
 document.getElementById('promo').addEventListener('click', function () {
     promoCode();
-    // deliveryCost('ship', 20);
 });
