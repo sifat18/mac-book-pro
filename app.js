@@ -10,6 +10,7 @@ function setPrice(charge, price) {
 
 // calculating all charges
 function totalCost() {
+    document.getElementById('promo').disabled = false;
     const memoryCharge = document.getElementById('memory-charge');
     const storageCharge = document.getElementById('storage-charge');
     const deliveryCharge = document.getElementById('ship-charge');
