@@ -31,11 +31,8 @@ function promoCode() {
     // getting input field value
     const couponMsg = document.getElementById('code');
     if (couponMsg.value.toLowerCase() == 'stevekaku') {
-        const totalCharge = document.getElementsByClassName('total-charge');
-        for (let i = 0; i < totalCharge.length; i++) {
-            totalCharge[i].innerText = parseInt(totalCharge[i].innerText) - parseInt(totalCharge[i].innerText) * 0.2;
-
-        };
+        const totalCharge = document.getElementById('discount');
+        totalCharge.innerText = parseInt(totalCharge.innerText) - parseInt(totalCharge.innerText) * 0.2;
         // disabling the promo code option
         document.getElementById('promo').disabled = true;
     }
