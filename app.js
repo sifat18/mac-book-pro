@@ -3,8 +3,8 @@ console.log("welcome");
 
 //common function for setting all charges 
 function setPrice(charge, price) {
-    const cost = document.getElementById(charge + '-charge');
-    cost.innerText = price;
+    const costId = document.getElementById(charge + '-charge');
+    costId.innerText = price;
     totalCost()
 };
 
